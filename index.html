@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malala Yousafzai Portfolio</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: transform 1s ease, opacity 0.2s ease;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide.previous {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-title {
+            position: absolute;
+            bottom: 28%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            z-index: 10;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: fadeUp 1.5s 1s forwards;
+            opacity: 0;
+        }
+        
+        .hero-subtitle {
+            position: absolute;
+            bottom: 16%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.25rem;
+            text-align: center;
+            z-index: 10;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            animation: fadeUp 1.5s 1.5s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translate(-50%, 50px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+        
+        .section {
+            padding: 2rem;
+            margin: 2rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s forwards;
+            animation-play-state: paused;
+        }
+        
+        .section.visible {
+            animation-play-state: running;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #d63384;
+        }
+        
+        .section-content {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        footer {
+            padding: 1rem;
+            text-align: center;
+            color: white;
+            background: linear-gradient(to right, #d63384, #ff8a8a);
+            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="slideshow" id="hero-slideshow">
+            <div class="slide">
+                <img src="https://images.ctfassets.net/0oan5gk9rgbh/7fmZdAYVCbBbJ3woFFzeQ3/24815892bc7f7ee1a2ca9a840ffeba34/GCE00212.jpg" alt="Malala Yousafzai">
+            </div>
+            <div class="slide">
+                <img src="https://www.un.org/sites/un2.un.org/files/field/image/2023/01/un7952210_20220919_lf_1683_.jpg" alt="Malala Yousafzai">
+            </div>
+            <div class="slide">
+                <img src="https://s.france24.com/media/display/ae535f68-091f-11e9-b2e4-005056a964fe/w:1280/p:4x3/10122014-malala-nobel-prize.jpg" alt="Malala Yousafzai">
+            </div>
+            <div class="slide">
+                <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-108024,resizemode-75,msid-118780289/news/international/global-trends/nobel-laureate-malala-yousafzai-visits-her-hometown-in-pakistan-for-the-first-time-since-2012-taliban-attack.jpg" alt="Malala Yousafzai">
+            </div>
+        </div>
+        <h1 class="hero-title">Malala Yousafzai</h1>
+        <p class="hero-subtitle">Activist | Nobel Laureate | Advocate for Education</p>
+    </div>
+
+    <div class="section" id="about">
+        <h2 class="section-title">About</h2>
+        <p class="section-content">
+            Malala Yousafzai is a Pakistani activist for female education and the youngest Nobel Prize laureate. She became a symbol of the fight for girls' education after surviving an assassination attempt by the Taliban. Her unwavering commitment to education and human rights has inspired millions around the world. She continues to advocate for education, equality, and peace through the Malala Fund and her powerful speeches.
+        </p>
+    </div>
+
+    <div class="section" id="education">
+        <h2 class="section-title">Education</h2>
+        <p class="section-content">
+            Malala pursued her education at Oxford University, earning a degree in Philosophy, Politics, and Economics (PPE). Her journey from the Swat Valley to one of the most prestigious universities in the world is a testament to her resilience and dedication to education.
+        </p>
+    </div>
+
+    <div class="section" id="passion">
+        <h2 class="section-title">Passion & Advocacy</h2>
+        <p class="section-content">
+            Malala's passion for education began at a young age, influenced by her father's school and advocacy. She has spoken at the United Nations, met global leaders, and tirelessly worked to ensure every girl has access to education.
+        </p>
+    </div>
+
+    <div class="section" id="achievements">
+        <h2 class="section-title">Achievements</h2>
+        <p class="section-content">
+            Malala's achievements include the Nobel Peace Prize in 2014, co-founding the Malala Fund, authoring the bestseller 'I Am Malala,' and serving as a UN Messenger of Peace.
+        </p>
+    </div>
+
+    <div class="section" id="media">
+        <h2 class="section-title">Media & Publications</h2>
+        <p class="section-content">
+            Malala has been featured in numerous international media outlets, written inspiring books, and contributed to publications advocating for girls' education and human rights. Her autobiography 'I Am Malala' became a global bestseller, and her speeches are widely regarded for their impact and eloquence.
+        </p>
+    </div>
+
+    <footer>
+        &copy; 2025 Malala Yousafzai Portfolio. All Rights Reserved.
+    </footer>
+
+    <script>
+        // Slideshow functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            let currentIndex = 0;
+            let previousIndex = slides.length - 1;
+            
+            // Initialize first slide
+            slides[currentIndex].classList.add('active');
+            
+            // Set up the automatic slideshow
+            setInterval(() => {
+                // Remove active class from current slide and add previous class
+                slides[currentIndex].classList.remove('active');
+                slides[currentIndex].classList.add('previous');
+                
+                // Remove previous class from previous slide
+                slides[previousIndex].classList.remove('previous');
+                
+                // Update indexes
+                previousIndex = currentIndex;
+                currentIndex = (currentIndex + 1) % slides.length;
+                
+                // Add active class to new current slide
+                slides[currentIndex].classList.add('active');
+            }, 3000);
+            
+            // Intersection Observer for section animations
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
